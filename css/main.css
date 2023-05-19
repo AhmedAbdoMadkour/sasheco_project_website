@@ -1,0 +1,358 @@
+/* START GLOBLE RULES */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --main-color:rgb(237, 205, 31);
+    --second-color:rgb(30, 45, 59);
+    --padding-section-top:30px;
+    --padding-section-bottom:60px;
+}
+ul{
+    list-style: none;
+}
+
+
+body{
+    font-family: 'Cairo', sans-serif;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* START COMPONEND */
+.main_title{
+    position: relative;
+    text-align: center;
+    color: var(--second-color);
+    font-size: 70px;
+    text-transform: uppercase;
+}
+
+.main_title::after{
+    position: absolute;
+    content: "";
+    width: 100px;
+    background-color: var(--main-color);
+    height: 8px;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* END COMPONEND */
+/* SMALL SCREEN */
+@media (min-width:768px){
+    .container{
+        width: 750px;
+    }
+}
+/* MEDUIM SCEREEN */
+@media (min-width:992px){
+    .container{
+
+        width: 970px;
+    }
+}
+/* LAREG SCREEN */
+@media (min-width:1200px){
+    .container{
+        width:1170px;
+    }
+}
+/* END GLOBLE RULES */
+
+/* START HEADER */
+header{
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgba(0, 0, 0, 0.20);
+    position: fixed;
+    width: 100vw;
+}
+header .icon{
+    display: block;
+    position: relative;
+    width: 60px;
+    height: 2px;
+}
+
+
+header .icon span{
+    display: block;
+    position: absolute;
+    width: 100%;
+    padding: 2px;
+    height: 100%;
+    color: white;
+}
+header .logo{
+    display: flex;
+    align-items: center;
+}
+
+header .logo  h1 a{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+
+header .logo  h1 a::after{
+    position:absolute;
+    content: "constructions";
+    color: white;
+    bottom: -12px;
+    left: 0px;
+    font-size: 20px;
+    font-weight: 200;
+}
+header .logo img{
+    width: 55px;
+}
+header nav ul{
+    display: flex;
+    
+}
+
+
+header nav ul li a{
+    color: white;
+    padding: 20px;
+    text-transform:uppercase;
+    text-decoration:none;
+    font-weight: 200;
+    font-size: 15px;
+}
+
+header nav .bars_icon li i{
+    display: none;
+}
+
+
+
+header nav ul li a:hover,
+.active{
+    color: var(--main-color);
+}
+/* END HEADER */
+/* START HEADER */
+
+.landing {
+    position: relative;
+    z-index: -1;
+}
+
+.landing::before{
+    position: absolute;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.12);
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.landing video{
+    width: 100%;
+}
+.landing .over_landing{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    text-align: center;
+    color: white;
+}
+
+.landing .over_landing .sasheco p{
+    color: var(--main-color);
+}
+
+.landing .over_landing .sasheco span{
+    color: var(--second-color);
+}
+.landing .over_landing p{
+    font-weight: bold;
+    font-size: 70px;
+
+}
+
+.landing .over_landing a i{
+    position: absolute;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    animation: up_dwon 1.5s linear  infinite;
+}
+@media (max-width:767px){
+    .landing video{
+        width: 100vw;
+    }
+    header{
+        width: 100vh;
+        background-color: var(--main-color);
+        opacity: .6;
+    }
+
+    header nav  .bars_icon li i{ 
+    display: flex ;
+    color: white;
+    font-size: 35px;
+
+    }
+
+    header nav  .links li {
+        display: none;
+    }
+
+    .landing .over_landing p{
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .landing .over_landing a i{
+        font-size: 16px;
+    }
+}
+/* END HEADER */
+/* START SERVICES */
+.services{
+    padding-top: var(--padding-section-top);
+    padding-bottom: var(--padding-section-bottom);
+}
+
+.services .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    gap: 40px;
+
+}
+.services .container .box_service {
+    background-color: #eee;
+}
+.services .container .box_service img{
+    width: 100%;
+}
+.services .container .box_service .text_box-service{
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.services .container .box_service .text_box-service h3{
+    color: var(--second-color);
+    text-transform:capitalize;
+    line-height: 1.7;
+}
+.services .container .box_service .text_box-service p{
+    color: #777;
+    line-height: 1.7;
+}
+/* END SERVICES */
+/* START ABOUT */
+.about .container .box_about{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+}
+
+.about .container .box_about .text_about h1{
+    text-align: start;
+    padding: 20px;
+}
+
+
+.about .container .box_about .text_about h1::after{
+    left: 70px;
+}
+
+.about .container .box_about .text_about p{
+    line-height: 1.6;
+    color: #777;
+    padding: 20px;
+}
+.about  .box_about .image_about img{
+    width: 100%;
+    height: 100%;
+}
+.about  .stats_about{
+    display: flex;
+    background-color: var(--main-color);
+    justify-content: center;
+    color: var(--second-color);
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 15px;
+}
+
+.about .stats_about .box_stats_about{
+    position: relative;
+    font-size: 40px;
+    text-align: center;
+    text-transform: capitalize; 
+}
+
+.about .stats_about .box_stats_about::after{
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 60px;
+    background-color: white;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.about .stats_about .box_stats_about p{
+    font-size: 20px;
+    font-weight: bold;
+}
+/* END ABOUT */
+/* START PROJECTS */
+.projects {
+    padding-bottom: 40px;
+}
+.projects .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+    gap: 40px;
+}
+.projects .container div img{
+    width: 100%;
+}
+/* END PROJECTS */
+/* START ANIMATION */
+@keyframes up_dwon {
+    10%,
+    20%,
+    30%,
+    40%,
+    70%,
+    80%{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    60%,
+    90%{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+/* END ANIMATION */
